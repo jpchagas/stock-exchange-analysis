@@ -16,7 +16,16 @@ for s in stocks:
 
 
 ac1 = prices['ABEV3.SA']
-(ac1/ac1.iloc[0]*100).plot(figsize=(15,5))
-plt.ylabel('NORMALIZED PRICES')
-plt.xlabel('DATE')
-plt.show()
+
+size = len(ac1)-1
+
+xn = ac1[size]
+
+x1 = ac1[0]
+
+rentabilidade = ((xn/x1)-1)*100
+print(rentabilidade)
+#(ac1/ac1.iloc[0]*100).plot(figsize=(15,5))
+#plt.ylabel('NORMALIZED PRICES')
+#plt.xlabel('DATE')
+#plt.show()
