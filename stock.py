@@ -14,7 +14,9 @@ prices=pd.DataFrame()
 for s in stocks:
     prices[s]=wb.DataReader(s, data_source='yahoo', start='2020-3-9')['Adj Close']
 
-(prices/prices.iloc[0]*100).plot(figsize=(15,5))
+
+ac1 = prices['ABEV3.SA']
+(ac1/ac1.iloc[0]*100).plot(figsize=(15,5))
 plt.ylabel('NORMALIZED PRICES')
 plt.xlabel('DATE')
 plt.show()
