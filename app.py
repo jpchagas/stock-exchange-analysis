@@ -14,9 +14,9 @@ for s in stocks:
 
 def main():
     page = st.sidebar.selectbox("Escolha uma opção:",['Opção 1','Opção 2','Opção 3'])
-    st.title("Stock Exchange Analysis Tool")
-    st.header('Tutoriak Streamlit - Heroku')
-    st.write('Esta é uma página de teste.')
+    st.title("MBA CONTROLADORIA E FINANÇAS - Mercado de Capitais")
+    st.header('Carteira IBOVESPA Selecionada')
+    #st.write('Esta é uma página de teste.')
     st.dataframe(prices.head())
     st.line_chart(prices)
 
