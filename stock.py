@@ -15,16 +15,7 @@ for s in stocks:
     prices[s]=wb.DataReader(s, data_source='yahoo', start='2020-3-9')['Adj Close']
 
 
-ac1 = prices['ABEV3.SA']
 
-size = len(ac1)-1
-
-xn = ac1[size]
-
-x1 = ac1[0]
-
-rentabilidade = ((xn/x1)-1)*100
-print(rentabilidade)
 #(ac1/ac1.iloc[0]*100).plot(figsize=(15,5))
 #plt.ylabel('NORMALIZED PRICES')
 #plt.xlabel('DATE')
