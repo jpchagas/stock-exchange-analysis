@@ -9,15 +9,13 @@ from dao.stock_dao import StockDAO
 
 
 def main():
-    #page = st.sidebar.selectbox("Escolha uma opção:",['Todas','ABEV3.SA','MGLU3.SA','BBAS3.SA','BRKM5.SA','BBDC4.SA','AZUL4.SA','ITUB4.SA','BBDC3.SA','VALE3.SA','PETR4.SA','RENT3.SA','SUZB3.SA','CIEL3.SA','GOLL4.SA','GNDI3.SA','BRAP4.SA','B3SA3.SA','BTOW3.SA','EQTL3.SA'])
     stock = st.sidebar.text_input("Enter your stock code","ITSA4.SA")
-    start_date = st.sidebar.date_input('Start date')
-    end_date = st.sidebar.date_input('End date')
+    start_date = st.sidebar.date_input('Start date',datetime.date.today()-datetime.timedelta(days=30))
+    end_date = st.sidebar.date_input('End date',datetime.date.today())
     st.title("Stock Monitor")
     
     stock_name = StockDAO().getStockName(stock)
     news_source = NewsDAO().getNews(stock_name,start_date,end_date)
-    print(news_source)
     news_list = NewsDAO().create_news(news_source)
     news_df = pd.DataFrame(NewsDAO().getJsonList(news_list))
 
